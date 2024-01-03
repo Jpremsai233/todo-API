@@ -8,13 +8,8 @@ appExpress.post('/api/login',controllers.stuLogin)
 appExpress.post('/api/logout',controllers.logout)
 appExpress.post('/api/createTodo/:userId', jwt.verifyToken, controllers.createTodo)
 appExpress.get('/api/getTodos/:userId',jwt.verifyToken,controllers.getTodos)
-appExpress.put('/api/updateTodo/:todoId', jwt.verifyToken, controllers.updateTodos)
-appExpress.post('/api/deleteUser/:todoId',jwt.verifyToken,controllers.deleteTodo)
-
-
-
-
-
+appExpress.put('/api/updateTodo/:userId/:todoId', jwt.verifyToken, controllers.updateTodos)
+appExpress.delete('/api/deleteTodo/:todoId',jwt.verifyToken,controllers.deleteTodo)
 
 
 

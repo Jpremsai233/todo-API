@@ -3,7 +3,6 @@ const mongoose = require('mongoose')
 let todosSchema = new mongoose.Schema({
     todoId:{
         type: String,
-        required: true
     },
     todos:{
         type: String,
