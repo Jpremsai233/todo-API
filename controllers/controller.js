@@ -172,9 +172,8 @@ async function deleteTodo(req, res) {
 
 
 async function updateTodos(req,res){
-    let updating = await todosSchema.updateOne({todoId: req.params.todoId, userId: req.params.userId}, {$set: {todos: req.body.todos}})
-    if(updating){
-        let updated = await todosSchema.findById({todoId: req.params.todoId})
+    let updating = await todosSchema.updateOne({todoId: req.params.todoId, userId: req.params.userId}, {$set: {todos: req.body.todos}}, (err, updated) =>{    
+        if(updated){
         res.send({
         msg: 'todo updated successfully',
         code: 2000,
@@ -186,6 +185,7 @@ async function updateTodos(req,res){
         code: 5000
     })
 }
+            }
 }
 
 module.exports = {
