@@ -1,0 +1,218 @@
+{
+	"info": {
+		"_postman_id": "1c291e47-1ab2-4b93-aacd-8256c4098853",
+		"name": "todos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32069796"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"prem\",\r\n    \"lastName\": \"sai\",\r\n    \"email\":\"premsaij233@gmail.com\",\r\n    \"password\":\"Jprem683\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3500/api/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"premsaij233@gmail.com\",\r\n    \"password\":\"Jprem683\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3500/api/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createTodos",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OTdhYTZmNWY0ZWY5NjBlNDA1YThiNiIsImVtYWlsIjoicHJlbXNhaWoyMzNAZ21haWwuY29tIiwiaWF0IjoxNzA0NDM4NTY5fQ.1BPZ98QXdrciBlSqUzB34lJdn8P2E-SWbYRQf02QTBY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"todos\": \"Learn Node\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3500/api/createTodo/:userId",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"api",
+						"createTodo",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "415deab8-18de-48e6-a29f-c22a1e4b593d"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-todos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OTdhYTZmNWY0ZWY5NjBlNDA1YThiNiIsImVtYWlsIjoicHJlbXNhaWoyMzNAZ21haWwuY29tIiwiaWF0IjoxNzA0NDM4NTY5fQ.1BPZ98QXdrciBlSqUzB34lJdn8P2E-SWbYRQf02QTBY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3500/api/getTodos/:userId",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"api",
+						"getTodos",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "415deab8-18de-48e6-a29f-c22a1e4b593d"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-todos",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OTdhYTZmNWY0ZWY5NjBlNDA1YThiNiIsImVtYWlsIjoicHJlbXNhaWoyMzNAZ21haWwuY29tIiwiaWF0IjoxNzA0NDM4NTY5fQ.1BPZ98QXdrciBlSqUzB34lJdn8P2E-SWbYRQf02QTBY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"todos\":\"Learn node & mongodb\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3500/api/updateTodo/:userId/:todoId",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"api",
+						"updateTodo",
+						":userId",
+						":todoId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "415deab8-18de-48e6-a29f-c22a1e4b593d"
+						},
+						{
+							"key": "todoId",
+							"value": "25d459da-023c-4313-9ed8-27f4a1d6ead6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-todo",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OTdhYTZmNWY0ZWY5NjBlNDA1YThiNiIsImVtYWlsIjoicHJlbXNhaWoyMzNAZ21haWwuY29tIiwiaWF0IjoxNzA0NDM4NTY5fQ.1BPZ98QXdrciBlSqUzB34lJdn8P2E-SWbYRQf02QTBY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3500/api/deleteTodo/:todoId",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"api",
+						"deleteTodo",
+						":todoId"
+					],
+					"variable": [
+						{
+							"key": "todoId",
+							"value": "25d459da-023c-4313-9ed8-27f4a1d6ead6"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
+
